@@ -1,0 +1,68 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ProfileScreen(),
+    );
+  }
+}
+
+class ProfileScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Your Profile'),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(20),
+        color: Colors.lightGreen, // Mengubah warna latar belakang tampilan
+        child: Column(
+          children: [
+            CircleAvatar(
+              radius: 80,
+              backgroundImage: AssetImage('your_profile_image.jpg'), // Ganti dengan path gambar profil Anda
+            ),
+            Text('Hello Zara', style: TextStyle(fontSize: 20)),
+            TextButton(
+              onPressed: () {
+                // Navigasi ke tampilan perubahan account info
+              },
+              child: Text ('Account info'),
+            ),
+            TextButton(
+              onPressed: () {
+                // Navigasi ke tampilan perubahan email
+              },
+              child: Text('Change Email'),
+            ),
+            TextButton(
+              onPressed: () {
+                // Navigasi ke tampilan perubahan password
+              },
+              child: Text('Change Password'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Logika untuk logout
+              },
+              child: Text('Logout'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Logika untuk menghapus akun
+              },
+              child: Text('Delete Account'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
