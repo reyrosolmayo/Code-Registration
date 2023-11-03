@@ -1,0 +1,63 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: SignUpScreen(),
+    );
+  }
+}
+
+class SignUpScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Sign Up'),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(20),
+        color: Colors.lightBlue, // Mengubah warna latar belakang tampilan
+        child: Column(
+          children: [
+            TextField(
+              decoration: InputDecoration(labelText: 'Name'),
+            ),
+            TextField(
+              decoration: InputDecoration(labelText: 'Email'),
+            ),
+            TextField(
+              decoration: InputDecoration(labelText: 'Phone Number'),
+            ),
+            TextField(
+              decoration: InputDecoration(labelText: 'Password'),
+              obscureText: true,
+            ),
+            TextField(
+              decoration: InputDecoration(labelText: 'Confirm Password'),
+              obscureText: true,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Logika untuk menangani Sign Up
+              },
+              child: Text('Sign Up'),
+            ),
+            Text('Already have an account?'),
+            TextButton(
+              onPressed: () {
+                // Navigasi ke tampilan Sign In
+              },
+              child: Text('Sign In'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
